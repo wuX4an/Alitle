@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Unistall flag function
+unistall() 
+{
+    echo -e "***\e[31m Uninstalling \e[0m***"
+    sudo rm /bin/alitle
+    echo -e "***\033[32m Good \033[0m***"
+}
+
+# Verify unistall flag and exit
+if [[ "$1" == "--unistall" ]]; then
+    unistall
+    exit 0
+fi
+
+#Alitle
+username=$(whoami)
+sleep 0.5
+
+docker start alitle
+docker exec -it alitle sudo su $username

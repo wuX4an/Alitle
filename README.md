@@ -26,15 +26,17 @@ git clone https://github.com/wuX4an/Alitle.git
 cd Alitle
 ```
 ```
-chmod +x setup.sh
+chmod +x setup.sh && chmod +x alitle
 ```
 ```
 ./setup.sh
 ```
 
+---
+
 ### After Install
 ```
-docker exec -it alitle fish
+alitle
 ```
 
 ```
@@ -44,6 +46,9 @@ passwd <your-user-name>
 ```
 sudo su <your-user-name>
 ```
+
+---
+
 ### Install theme for you shell
 #### First install oh my fish
 ```
@@ -66,7 +71,7 @@ omf install batman
 
 ---
 
-### Future updates
+### Possible Futures updates
 * #### A little package manager
 * #### A repository with useful and basic helper-type tools written in ash or fish
 * #### And probably all the mini projects are compatible with this repository

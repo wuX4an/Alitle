@@ -14,5 +14,9 @@ docker cp install.sh alitle:/
 docker exec alitle chmod +x install.sh
 docker exec alitle ./install.sh
 
+#Setup alitle command
+chmod +x alitle
+sudo cp alitle /bin
+
 #remove shit
 rm whoami
