@@ -40,9 +40,6 @@ docker exec -it alitle fish
 ```
 passwd <your-user-name>
 ```
-```
-passwd root
-```
 #### I recommend before this step to log in with your user and not create directories in Alitle as the root user
 ```
 sudo su <your-user-name>
