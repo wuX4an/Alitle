@@ -68,11 +68,6 @@ create()
     #Install base
     apk add curl wget git nano fish shadow sudo openssh-server openrc
 
-    #Install third party
-    wget https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch
-    chmod +x pfetch
-    mv pfetch /bin
-
     #Setup user (deafult passwd is ali)
     echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel
     adduser -h alitle/$username -D $username
@@ -108,6 +103,7 @@ create()
     #Share
     docker cp /tmp/install.sh alitle:/
     docker cp /setups/base/sshd_config alitle:/
+    docker cp /setups/base/pfetch alitle:/bin
     docker exec alitle chmod +x install.sh
     docker exec alitle ./install.sh
 
