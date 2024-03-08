@@ -1,5 +1,5 @@
 tests
 setup
-install
 setups/setup-python.sh
 .gitignore
+.vscode

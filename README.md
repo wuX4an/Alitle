@@ -10,7 +10,7 @@ Alitle is Alpine Linux on Docker. It is intended for those who want to use Docke
 * #### docker
 * #### git
 
-### **Recomendations**
+### **Recommendations**
 
 * [lazydocker](https://github.com/jesseduffield/lazydocker)
 
@@ -31,7 +31,7 @@ https://raw.githubusercontent.com/wuX4an/Alitle/main/install.sh
 ```
 ali shell
 ```
-#### I recomend change the deafault password 
+#### I recommend change the default password    
 ```
 passwd <your-user-name>
 ```
@@ -56,7 +56,7 @@ omf install batman
 * #### Install automatically the basic tools 
 * #### Your user now create and configure automatically
 * #### Fish is now your default shell
-* #### Dont use neofetch now use pfetch 
+* #### Don't use neofetch now use pfetch 
 
 ---
 
@@ -66,6 +66,11 @@ omf install batman
 * #### And probably all the mini projects are compatible with this repository
 * #### A bash script that you can install on your base system to get into the container more easily with you user (beta)
 * #### User add user profiles setup tool and use with the custom future repository
+
+---
+
+### Bugs
+* #### When connect via ssh a other /alitle/user create inside in /alitle/user (/alitle/user/alitle/user)
 
 ---
 
