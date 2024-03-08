@@ -1,14 +1,22 @@
 #!/bin/bash
 
+user=$(whoami)
+
 cd /tmp
-git clone https://github.com/wuX4an/Alitle.git >> ./shit
+git clone https://github.com/wuX4an/Alitle.git
 sleep 0.25
 cd Alitle
-sudo cp ./setups/ali /bin
+sudo cp setups/base/ali /bin
 
-mkdir /opt/ali/
-mkdir /opt/ali/bin/
-mkdir /opt/ali/conf/
+sleep 0.25
 
-cp ./setups/bin/* /opt/ali/bin/
-cp ./setups/conf/* /opt/ali/conf/
+mkdir /home/$user/.ali
+mkdir /home/$user/.ali/bin/
+mkdir /home/$user/.ali/conf/
+
+sleep 0.25
+
+cp ./setups/bin/* /home/$user/.ali/bin/
+cp ./setups/conf/* /home/$user/.ali/conf/
+
+rm -r /tmp/Alitle
