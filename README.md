@@ -85,6 +85,9 @@ omf install batman
 
 ---
 
+### Note: everything is a beta, everything could change drastically at some point
+
+---
 <br>
 
 
