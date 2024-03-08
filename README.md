@@ -27,30 +27,26 @@ git clone https://github.com/wuX4an/Alitle.git
 cd Alitle
 ```
 ```
-chmod +x setup.sh
+chmod +x /setups/base/ali
 ```
 ```
-./setup.sh
+./setups/base/ali
+```
+
+```
+sudo mv /setups/base/ali /bin
 ```
 
 ---
 
 ### After Install
+#### The default password is "ali"
 ```
-sudo docker exec -it alitle fish
+ali shell
 ```
-
+#### I recomend change the deafault password 
 ```
 passwd <your-user-name>
-```
-#### I recommend before this step to log in with your user and not create directories in Alitle as the root user
-```
-sudo su <your-user-name>
-```
-
-#### You can log in via ssh by typing:
-```
-alitle
 ```
 
 ---
@@ -81,7 +77,7 @@ omf install batman
 * #### A little package manager
 * #### A repository with useful and basic helper-type tools written in ash or fish
 * #### And probably all the mini projects are compatible with this repository
-* #### A bash script that you can install on your base system to get into the container more easily with you user(is the next project)
+* #### A bash script that you can install on your base system to get into the container more easily with you user (beta)
 
 ---
 
