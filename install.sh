@@ -6,6 +6,7 @@ cd /tmp
 git clone https://github.com/wuX4an/Alitle
 sleep 0.25
 cd Alitle
+chmod +x setups/base/ali
 sudo cp setups/base/ali /bin
 
 sleep 0.25
