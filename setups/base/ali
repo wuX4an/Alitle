@@ -68,13 +68,6 @@ create()
     #Install base
     apk add curl wget git nano fish shadow sudo openssh-server openrc
 
-    #Setup user (deafult passwd is ali)
-    echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel
-    adduser -h alitle/$username -D $username
-    echo $username:$password | chpasswd
-    usermod -aG wheel $username
-    chown $username /alitle
-
     #Setup shell
     chsh root -s /usr/bin/fish
     chsh $username -s /usr/bin/fish
@@ -86,6 +79,13 @@ create()
     touch /run/openrc/softlevel
     /etc/init.d/sshd start
 
+    #Setup user (deafult passwd is ali)
+    echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel
+    adduser -h alitle/$username -D $username
+    echo $username:$password | chpasswd
+    usermod -aG wheel $username
+    chown $username /alitle
+
     sleep 0.25
 
     #Remove shits
@@ -93,7 +93,8 @@ create()
 
     #Finishing
     echo -e '*** Instalation Complete ***' " >> /tmp/install.sh
-    ####
+
+    ########
     
     #Setup container
     docker pull alpine:3.19
@@ -102,8 +103,8 @@ create()
 
     #Share
     docker cp /tmp/install.sh alitle:/
-    docker cp /setups/base/sshd_config alitle:/
-    docker cp /setups/base/pfetch alitle:/bin
+    docker cp ./setups/base/sshd_config alitle:/
+    docker cp ./setups/base/pfetch alitle:/bin
     docker exec alitle chmod +x install.sh
     docker exec alitle ./install.sh
 
