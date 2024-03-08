@@ -1,3 +1,5 @@
 setups
-whoami
 tests
+setup.sh
+install.sh
+.gitignore
