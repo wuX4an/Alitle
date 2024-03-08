@@ -1,5 +1,5 @@
-setups
 tests
-setup.sh
-install.sh
+setup
+install
+setups/setup-python.sh
 .gitignore

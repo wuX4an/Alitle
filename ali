@@ -23,8 +23,32 @@ shell()
     ssh $username@localhost -p 2022
 }
 # Verify  flag and exit
-if [[ "$1" == "--shell" ]]; then
+if [[ "$1" == "shell" ]]; then
     shell
+    exit 0
+fi
+
+
+#TODO Start alitle
+start() 
+{
+    docker start alitle
+}
+# Verify  flag and exit
+if [[ "$1" == "start" ]]; then
+    start
+    exit 0
+fi
+
+
+#TODO Start alitle
+stop() 
+{
+    docker stop alitle
+}
+# Verify  flag and exit
+if [[ "$1" == "stop" ]]; then
+    stop
     exit 0
 fi
 
@@ -83,7 +107,7 @@ create()
 
     #Share
     docker cp /tmp/install.sh alitle:/
-    docker cp sshd_config alitle:/
+    docker cp /setups/base/sshd_config alitle:/
     docker exec alitle chmod +x install.sh
     docker exec alitle ./install.sh
 
@@ -94,3 +118,32 @@ if [[ "$1" == "-c" ]]; then
     create
     exit 0
 fi
+
+
+#TODO Remove alitle
+remove() 
+{
+    docker stop alitle
+    docker rm alitle
+}
+# Verify  flag and exit
+if [[ "$1" == "-d" ]]; then
+    remove
+    exit 0
+fi
+
+
+
+################# THE MUNDANE #################
+#TODO Shell-enter flag function
+v() 
+{
+    echo "Testing"
+}
+# Verify  flag and exit
+if [[ "$1" == "-v" ]]; then
+    v
+    exit 0
+fi
+
+##NEXT FUNC HELP -h
