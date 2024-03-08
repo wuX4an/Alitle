@@ -11,6 +11,7 @@ docker start alitle
 #Share
 docker cp whoami alitle:/
 docker cp install.sh alitle:/
+docker cp sshd_config alitle:/
 docker exec alitle chmod +x install.sh
 docker exec alitle ./install.sh
 

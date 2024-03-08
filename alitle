@@ -18,5 +18,4 @@ fi
 username=$(whoami)
 sleep 0.5
 
-docker start alitle
-docker exec -it alitle sudo su $username
+ssh $username@localhost -p 2022
