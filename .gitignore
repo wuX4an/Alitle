@@ -1,5 +1,4 @@
 setups
 tests
-setup.sh
-install.sh
-.gitignore
+setup
+install
