@@ -103,8 +103,8 @@ create()
 
     #Share
     docker cp /tmp/install.sh alitle:/
-    docker cp ./setups/base/sshd_config alitle:/
-    docker cp ./setups/base/pfetch alitle:/bin
+    docker cp /opt/ali/conf/sshd_config alitle:/
+    docker cp /opt/ali/bin/pfetch alitle:/bin
     docker exec alitle chmod +x install.sh
     docker exec alitle ./install.sh
 
