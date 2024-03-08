@@ -1,21 +1,96 @@
 #!/bin/bash
 
-# Unistall flag function
+################# TWO FLAGS #################
+
+#TODO Unistall flag function
 unistall() 
 {
-    echo -e "***\e[31m Uninstalling \e[0m***"
+    echo -e "***\e[31m Uninstall \e[0m***"
     sudo rm /bin/alitle
-    echo -e "***\033[32m Good \033[0m***"
 }
-
 # Verify unistall flag and exit
 if [[ "$1" == "--unistall" ]]; then
     unistall
     exit 0
 fi
 
-#Alitle
-username=$(whoami)
-sleep 0.5
 
-ssh $username@localhost -p 2022
+#TODO Shell-enter flag function
+shell() 
+{
+    username=$(whoami)
+    sleep 0.25
+    ssh $username@localhost -p 2022
+}
+# Verify  flag and exit
+if [[ "$1" == "--shell" ]]; then
+    shell
+    exit 0
+fi
+
+
+################# ONE FLAG #################
+
+
+#TODO Create flag function
+create() 
+{
+    password=$(echo "ali")
+    username=$(whoami)
+
+    ## Create install cript ##
+    echo "#!/bin/ash
+
+    #Install base
+    apk add curl wget git nano fish shadow sudo openssh-server openrc
+
+    #Install third party
+    wget https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch
+    chmod +x pfetch
+    mv pfetch /bin
+
+    #Setup user (deafult passwd is ali)
+    echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel
+    adduser -h alitle/$username -D $username
+    echo $username:$password | chpasswd
+    usermod -aG wheel $username
+    chown $username /alitle
+
+    #Setup shell
+    chsh root -s /usr/bin/fish
+    chsh $username -s /usr/bin/fish
+
+    #Setup ssh
+    mv sshd_config /etc/ssh
+    ssh-keygen -A
+    rc-status
+    touch /run/openrc/softlevel
+    /etc/init.d/sshd start
+
+    sleep 0.25
+
+    #Remove shits
+    rm install.sh
+
+    #Finishing
+    echo -e '*** Instalation Complete ***' " >> /tmp/install.sh
+    ####
+    
+    #Setup container
+    docker pull alpine:3.19
+    docker create -v /home/$USER/Alitle:/alitle --name alitle --network="host" -i alpine:3.19 /bin/ash
+    docker start alitle
+
+    #Share
+    docker cp /tmp/install.sh alitle:/
+    docker cp sshd_config alitle:/
+    docker exec alitle chmod +x install.sh
+    docker exec alitle ./install.sh
+
+    rm /tmp/install.sh
+}
+# Verify create flag and exit
+if [[ "$1" == "-c" ]]; then
+    create
+    exit 0
+fi

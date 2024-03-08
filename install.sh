@@ -8,10 +8,12 @@ wget https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch
 chmod +x pfetch
 mv pfetch /bin
 
-#Setup user
+#Setup user (deafult passwd is ali)
+password=$(echo "ali")
 echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel
 username=$(cat /whoami)
 adduser -h alitle/$username -D $username
+echo $username:$password | chpasswd
 usermod -aG wheel $username
 chown $username /alitle
 
@@ -33,5 +35,4 @@ rm whoami
 rm install.sh
 
 #Finishing
-fish
 echo -e "*****\033[32m Instalation Complete \033[0m*****"
