@@ -18,5 +18,3 @@ sleep 0.25
 
 cp ./setups/bin/* /home/$user/.ali/bin/
 cp ./setups/conf/* /home/$user/.ali/conf/
-
-rm -r /tmp/Alitle
