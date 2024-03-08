@@ -6,7 +6,7 @@
 unistall() 
 {
     echo -e "***\e[31m Uninstall \e[0m***"
-    sudo rm /bin/alitle
+    sudo rm /bin/ali
 }
 # Verify unistall flag and exit
 if [[ "$1" == "--unistall" ]]; then
