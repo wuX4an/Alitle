@@ -65,14 +65,10 @@ omf install batman
 * #### A repository with useful and basic helper-type tools written in ash or fish
 * #### And probably all the mini projects are compatible with this repository
 * #### A bash script that you can install on your base system to get into the container more easily with you user (beta)
+* #### User add user profiles setup tool and use with the custom future repository
 
 ---
 
 ### Note: everything is a beta, everything could change drastically at some point
 
 ---
-<br>
-
-
-##### Help:
-###### I need ```export PF_INFO="ascii os kernel uptime memory palette" ``` to be executed every time it boots.
