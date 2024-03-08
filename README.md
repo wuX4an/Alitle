@@ -19,6 +19,7 @@ Alitle is a Linux Alpine on Docker. It is intended for those who want to use Doc
 <br>
 
 ### Install
+#### NOTE: you must have port 2022 unoccupied, if not you must change it in alitle(bin) and sshd_conf
 ```
 git clone https://github.com/wuX4an/Alitle.git
 ```
@@ -26,7 +27,7 @@ git clone https://github.com/wuX4an/Alitle.git
 cd Alitle
 ```
 ```
-chmod +x setup.sh && chmod +x alitle
+chmod +x setup.sh
 ```
 ```
 ./setup.sh
