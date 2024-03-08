@@ -1,6 +1,6 @@
 # Alitle
 
-Alitle is a Linux Alpine on Docker. It is intended for those who want to use Docker as small virtual machines. I created it to become the container that everyone wanted but no one asked for.
+Alitle is a Alpine Linux on Docker. It is intended for those who want to use Docker as small virtual machines. I created it to become the container that everyone wanted but no one asked for.
 
 <img src="https://raw.githubusercontent.com/wuX4an/wuX4an/main/assets/logo/alpine.png">
 
