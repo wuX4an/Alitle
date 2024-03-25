@@ -1,0 +1,17 @@
+#!/bin/bash
+
+## BETA UNSTABLE, It does not work##
+
+sudo apk add xrdp xorgxrdp
+sudo rc-update add xrdp default 
+sudo rc-update add xrdp-sesman default
+sudo service xrdp restart
+
+#start at boot
+#sudo ln -s /etc/sv/xrdp /etc/runit/runsvdir/default/xrdp
+#sudo ln -s /etc/sv/xrdp-sesman /etc/runit/runsvdir/default/xrdp-sesman
+
+## Chose a desktop##
+
+#Xfce
+#sudo apk add xfce4 xfce4-terminal xfce4-screensaver lightdm-gtk-greeter

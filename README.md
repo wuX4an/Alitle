@@ -69,11 +69,6 @@ omf install batman
 
 ---
 
-### Bugs
-* #### When connect via ssh a other /alitle/user create inside in /alitle/user (/alitle/user/alitle/user)
-
----
-
 ### Note: everything is a beta, everything could change drastically at some point
 
 ---

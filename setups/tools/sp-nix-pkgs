@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo apk add xz bash
+## change to bash an execute that ##
+sh <(curl -L https://nixos.org/nix/install) --no-daemon

@@ -1,8 +1,8 @@
 #!/bin/bash
 
-################# TWO FLAGS #################
+################# TWO COMMANDS #################
 
-#TODO Unistall flag function
+#TODO Unistall
 unistall() 
 {
     echo -e "***\e[31m Uninstall \e[0m***"
@@ -15,10 +15,13 @@ if [[ "$1" == "--unistall" ]]; then
 fi
 
 
-#TODO Shell-enter flag function
+#TODO Shell-enter
 shell() 
 {
+    docker start alitle
+    sleep 0.25
     username=$(whoami)
+    docker exec alitle service sshd restart
     sleep 0.25
     ssh $username@localhost -p 2022
 }
@@ -41,7 +44,7 @@ if [[ "$1" == "start" ]]; then
 fi
 
 
-#TODO Start alitle
+#TODO Stop alitle
 stop() 
 {
     docker stop alitle
@@ -49,6 +52,30 @@ stop()
 # Verify  flag and exit
 if [[ "$1" == "stop" ]]; then
     stop
+    exit 0
+fi
+
+
+#TODO status alitle
+restart() 
+{
+    docker status alitle
+}
+# Verify  flag and exit
+if [[ "$1" == "status" ]]; then
+    status
+    exit 0
+fi
+
+
+#TODO Restart alitle
+restart() 
+{
+    docker restart alitle
+}
+# Verify  flag and exit
+if [[ "$1" == "restart" ]]; then
+    restart
     exit 0
 fi
 
@@ -68,23 +95,24 @@ create()
     #Install base
     apk add curl wget git nano fish shadow sudo openssh-server openrc
 
-    #Setup shell
-    chsh root -s /usr/bin/fish
-    chsh $username -s /usr/bin/fish
-
     #Setup ssh
     mv sshd_config /etc/ssh
     ssh-keygen -A
     rc-status
     touch /run/openrc/softlevel
     /etc/init.d/sshd start
+    rc-update add ssh default
 
     #Setup user (deafult passwd is ali)
     echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel
-    adduser -h alitle/$username -D $username
+    adduser -h /home/$username -D $username
     echo $username:$password | chpasswd
     usermod -aG wheel $username
     chown $username /alitle
+
+    #Setup shell
+    chsh root -s /usr/bin/fish
+    chsh $username -s /usr/bin/fish
 
     sleep 0.25
 
@@ -117,18 +145,31 @@ if [[ "$1" == "-c" ]]; then
 fi
 
 
-#TODO Remove alitle
-remove() 
+#TODO delete alitle
+delete() 
 {
     docker stop alitle
     docker rm alitle
 }
-# Verify  flag and exit
+# Verify flag and exit
 if [[ "$1" == "-d" ]]; then
-    remove
+    delete
     exit 0
 fi
 
+
+#TODO create and enter shell alitle
+create-shell()
+{
+    create
+    sleep 0.25
+    shell
+}
+# Verify flag and exit
+if [[ "$1" == "-ct" ]]; then
+    create-shell
+    exit 0
+fi
 
 
 ################# THE MUNDANE #################
