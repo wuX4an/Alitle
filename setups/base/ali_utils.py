@@ -41,7 +41,7 @@ def create(username, password, alpine_version):
         "#Share",
         "docker cp /tmp/install.sh alitle:/",
         "docker cp /home/$USER/.ali/conf/sshd_config alitle:/",
-        "docker cp /home/$USER/.ali/bin/pfetch alitle:/bin",
+        "docker cp /home/$USER/.ali/bin/ufetch alitle:/bin",
         "docker exec alitle chmod +x install.sh",
         "docker exec alitle ./install.sh",
         "rm /tmp/install.sh",
