@@ -1,5 +1,7 @@
 #!/bin/bash
 
+: << 'COMMENT'
+
 user=$(whoami)
 
 cd /tmp
@@ -21,3 +23,5 @@ sleep 0.25
 cp ./setups/bin/* /home/$user/Alitle/bin/
 cp ./setups/conf/* /home/$user/Alitle/conf/
 cp ./setups/tools/* /home/$user/Alitle/tools/
+
+COMMENT
