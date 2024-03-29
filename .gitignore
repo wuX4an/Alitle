@@ -3,3 +3,6 @@ tests
 .vscode
 roadmap
 env
+__pycache__
+log
+algoritms.txt
