@@ -1,4 +1,29 @@
 import os
+from time import sleep
+
+def find_chain(log_path, key, message):
+  symbols = ['⣾', '⣷', '⣯', '⣟', '⡿', '⢿', '⣻', '⣽']
+  a = 0
+  while True:
+    #Animation
+    a = (a + 1) % len(symbols)
+    print(f'\r\033[K%s {message}...' % symbols[a], flush=True, end='')
+    sleep(0.1)
+    #Read
+    with open(log_path, "r") as f:
+      lines = f.readlines()
+
+    #Find
+    find = False
+    for i, line in enumerate(lines):
+      if key in line:
+        #print(f"\n\nline {i + 1}: {line}")
+        os.system('clear')
+        print(f"\nInstallation Complete\n")
+        find = True
+    if find == True:
+      break
+
 
 def uninstall():
     os.system('echo -e "***\e[31m Uninstall \e[0m***"')
@@ -31,7 +56,7 @@ def create(username, password, alpine_version):
         "#Remove shits",
         "rm install.sh",
         "#Finishing",
-        "echo -e '*** Instalation Complete ***' "]
+        "echo -e 'Instalation Complete ***' "]
     #print("\n".join(install_scr))
     
     docker_cmd=[
@@ -62,6 +87,7 @@ def create(username, password, alpine_version):
     
     ## RUN ##
     os.system("nohup sh -c 'chmod +x /tmp/docker_cmd.sh && . /tmp/docker_cmd.sh' > log 2>&1&")
+    find_chain("log", "***", "Installing")
     
 
 
