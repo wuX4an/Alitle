@@ -56,7 +56,7 @@ omf install batman
 * #### Install automatically the basic tools 
 * #### Your user now create and configure automatically
 * #### Fish is now your default shell
-* #### Don't use neofetch now use pfetch 
+* #### Don't use neofetch now use ufetch 
 
 ---
 
