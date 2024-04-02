@@ -16,13 +16,11 @@ def find_chain(log_path, key, error, loading_message, finish_message, error_mess
     #Find
     find = False
     for i, line in enumerate(lines):
-        if error == "noerror":
-            pass
-        elif error in line:
+        if error in line:
             os.system('clear')
             print(f"\n{error_message}\n")
             find = True
-        elif key in line:
+        elif key in line and find == False:
             #print(f"\n\nline {i + 1}: {line}")
             os.system('clear')
             print(f"\n{finish_message}\n")
@@ -31,10 +29,6 @@ def find_chain(log_path, key, error, loading_message, finish_message, error_mess
       break
 
 
-def uninstall():
-    os.system('echo -e "***\e[31m Uninstall \e[0m***"')
-    os.system('sudo rm /bin/ali')
-    
 
 def create(username, password, alpine_version):
     
@@ -93,7 +87,7 @@ def create(username, password, alpine_version):
     
     ## RUN ##
     os.system("nohup sh -c 'chmod +x /tmp/docker_cmd.sh && . /tmp/docker_cmd.sh' > log 2>&1&")
-    find_chain("log", "***","permission denied", "Installing", "Installation Complete", "Something Went Wrong")
+    find_chain("log", "***","permission denied", "Creating", "Creation Complete", "Something Went Wrong")
     
 
 
@@ -105,17 +99,17 @@ def shell(username):
 
 
 def start():
-    os.system('docker start alitle')
+    os.system('clear')
+    os.system("nohup sh -c 'docker start alitle' > log 2>&1&")
+    find_chain("log", "alitle", "No such container", "Starting", "The container started", "The Container no Exist")
 
 
 
 def stop():
-    os.system('docker stop alitle')
-
-
-
-def status():
-    os.system('docker status alitle')
+    #os.system('docker stop alitle')
+    os.system('clear')
+    os.system("nohup sh -c 'docker stop alitle' > log 2>&1&")
+    find_chain("log", "alitle","No such container", "Stopping", "The container stopped", "The Container no Exist")
 
 
 
@@ -123,7 +117,20 @@ def restart():
     os.system('docker restart alitle')
 
 
+
 def delete():
     os.system('clear')
     os.system("nohup sh -c 'docker stop alitle && docker rm alitle' > log 2>&1&")
-    find_chain("log", "alitle","No such container", "Removing", "Removing Complete", "The Container no Exist")
+    find_chain("log", "alitle","No such container", "Removing", "The container started", "The Container no Exist")
+
+
+
+def status():
+    os.system('docker stats alitle')
+
+
+
+
+def uninstall():
+    os.system('echo -e "***\e[31m Uninstall \e[0m***"')
+    os.system('sudo rm /bin/ali')
