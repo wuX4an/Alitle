@@ -94,7 +94,7 @@ def create(username, password, alpine_version):
 
 
 def shell(username):
-    os.system('docker start alitle')
+    os.system("nohup sh -c 'docker start alitle' > /dev/null 2>&1&")
     os.system(f'docker exec -it alitle su {username}')
 
 
