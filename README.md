@@ -20,24 +20,37 @@ Alitle is Alpine Linux on Docker. It is intended for those who want to use Docke
 <div style="text-align: center;">
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 ![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 
 </div>
 
----
-
-### **Requirements**
-* #### docker
-* #### git
-* #### python
-* #### pip
 
 ---
 
 <br>
 
-### Install
+## Installation
+
+<style>
+details > summary{
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+</style>
+
+
+<details>
+    <summary>System Requirements</summary>  
+    <li style="font-weight: bold; padding-left : 10px;">docker</li>
+    <li style="font-weight: bold; padding-left : 10px;">git</li>
+    <li style="font-weight: bold; padding-left : 10px;">python</li>
+
+</details>
+
 #### NOTE: you must have port 2022 unoccupied, if not you must change it in ali(bin) and sshd_conf (ssh in beta)
 ```console
 https://raw.githubusercontent.com/wuX4an/Alitle/main/install.sh
