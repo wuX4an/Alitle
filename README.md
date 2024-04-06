@@ -34,10 +34,13 @@ Alitle is Alpine Linux on Docker. It is intended for those who want to use Docke
 
 <h3><details>
     <summary><b>System Requirements</b></summary>
+<h6> 
 
 - Docker 🐳
 - Git 🌿
 - Python 🐍
+
+</h6>
 
 </details></h3>
 
