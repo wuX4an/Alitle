@@ -9,6 +9,8 @@ Alitle is Alpine Linux on Docker. It is intended for those who want to use Docke
 ### **Requirements**
 * #### docker
 * #### git
+* #### python
+* #### pip
 
 ### **Recommendations**
 
@@ -27,27 +29,13 @@ https://raw.githubusercontent.com/wuX4an/Alitle/main/install.sh
 ---
 
 ### After Install
-#### The default password is "ali"
+#### To enter to the container type
 ```
 ali shell
 ```
-#### I recommend change the default password    
+#### I recommend change the default password, The default password is "alabama"
 ```
 passwd <your-user-name>
-```
-
----
-
-### Install theme for you shell
-#### First install oh my fish
-```
-curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-```
-
-
-#### You can install a theme for your shell with omf, I recommend batman. select your favorite theme [here](https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md)
-```
-omf install batman 
 ```
 
 ---
@@ -72,3 +60,7 @@ omf install batman
 ### Note: everything is a beta, everything could change drastically at some point
 
 ---
+
+## Credit
+
+- [jschx (ufetch) ](https://gitlab.com/jschx/ufetch)
