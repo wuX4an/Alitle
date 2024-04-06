@@ -71,8 +71,8 @@ def stop():
 
 
 def restart():
-    os.system('docker restart alitle')
-
+    os.system("nohup sh -c 'docker restart alitle' > log 2>&1&")
+    find_chain("log", "alitle","No such container", "Restarting", "The container as been restarted", "The Container no Exist", True)
 
 
 def delete():
