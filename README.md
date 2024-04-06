@@ -32,22 +32,15 @@ Alitle is Alpine Linux on Docker. It is intended for those who want to use Docke
 
 ## Installation
 
-<style>
-details > summary{
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    color: white;
-    font-weight: bold;
-}
-</style>
-
-
 <details>
-    <summary>System Requirements</summary>  
-    <li style="font-weight: bold; padding-left : 10px;">docker</li>
-    <li style="font-weight: bold; padding-left : 10px;">git</li>
-    <li style="font-weight: bold; padding-left : 10px;">python</li>
+    <summary style="border: none; cursor: pointer; font-size: 18px; font-weight: bold;">
+    System Requirements
+    </summary>  
+    <div style="font-weight: bold; padding-left : 20px;">
+        <li >docker</li>
+        <li>git</li>
+        <li>python</li>
+    </div>
 
 </details>
 
