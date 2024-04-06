@@ -1,4 +1,5 @@
 import os
+import conf
 from time import sleep
 
 def find_chain(log_path, key, error, loading_message, finish_message, error_message, animation):
@@ -31,60 +32,17 @@ def find_chain(log_path, key, error, loading_message, finish_message, error_mess
 
 
 def create(username, password, alpine_version):
-    
-    install_scr=[
-        "#!/bin/ash",
-        "#Install base",
-        "apk add curl wget git nano fish shadow sudo openssh-server openrc",
-        "#Setup ssh",
-        "mv sshd_config /etc/ssh",
-        "ssh-keygen -A",
-        "rc-status",
-        "touch /run/openrc/softlevel",
-        "/etc/init.d/sshd start",
-        "rc-update add ssh default",
-        "#Setup user (deafult passwd is ali)",
-        "echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel",
-        f"adduser -h /home/{username} -D {username}",
-        f"echo {username}:{password} | chpasswd",
-        f"usermod -aG wheel {username}",
-        f"chown {username} /sali",
-        "#Setup shell",
-        "chsh root -s /usr/bin/fish",
-        f"chsh {username} -s /usr/bin/fish",
-        "sleep 0.25",
-        "#Remove shits",
-        "rm install.sh",
-        "#Finishing",
-        "echo -e 'Instalation Complete ***' "]
-    #print("\n".join(install_scr))
-    
-    docker_cmd=[
-        f"docker pull alpine:{alpine_version}",
-        f"docker create -v /home/{username}/.ali/:/sali --name alitle --network='host' -i alpine:{alpine_version} /bin/ash",
-        "docker start alitle",
-        "#Share",
-        "docker cp /tmp/install.sh alitle:/",
-        f"docker cp /home/{username}/.ali/conf/sshd_config alitle:/",
-        f"docker cp /home/{username}/.ali/bin/ufetch alitle:/bin",
-        f"docker cp /home/{username}/.ali/conf/fish alitle:/home{username}/.config/",
-        "docker exec alitle chmod +x install.sh",
-        "docker exec alitle ./install.sh",
-        "rm /tmp/install.sh",
-        "rm /tmp/docker_cmd.sh"]
-    
-    ## LOGIC ##
-    
+
     #Install src
     os.system('touch /tmp/install.sh')
-    install_scr = "\n".join(install_scr)
+    conf.install_scr = "\n".join(conf.install_scr)
     with open("/tmp/install.sh", "w") as install:
-        install.write(install_scr)
+        install.write(conf.install_scr)
     #Docker src
     os.system('touch /tmp/docker_cmd.sh')
-    docker_cmd = "\n".join(docker_cmd)
+    conf.docker_cmd = "\n".join(conf.docker_cmd)
     with open("/tmp/docker_cmd.sh", "w") as docker:
-        docker.write(docker_cmd)
+        docker.write(conf.docker_cmd)
     
     ## RUN ##
     os.system("nohup sh -c 'chmod +x /tmp/docker_cmd.sh && . /tmp/docker_cmd.sh' > log 2>&1&")
