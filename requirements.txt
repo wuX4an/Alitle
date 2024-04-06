@@ -1,1 +1,2 @@
 click==8.1.7
+pyinstaller==6.5.0
