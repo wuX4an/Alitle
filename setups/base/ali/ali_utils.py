@@ -67,6 +67,7 @@ def create(username, password, alpine_version):
         "docker cp /tmp/install.sh alitle:/",
         f"docker cp /home/{username}/.ali/conf/sshd_config alitle:/",
         f"docker cp /home/{username}/.ali/bin/ufetch alitle:/bin",
+        f"docker cp /home/{username}/.ali/conf/fish alitle:/home{username}/.config/",
         "docker exec alitle chmod +x install.sh",
         "docker exec alitle ./install.sh",
         "rm /tmp/install.sh",
