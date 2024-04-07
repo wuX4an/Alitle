@@ -70,6 +70,7 @@ function question() {
 function python() {
     cd /tmp/Alitle
     python -m venv env
+    sleep 10
     source env/bin/activate
 
     if [[ "$PS1" == *"(env)"* ]]; then
