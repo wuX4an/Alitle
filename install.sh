@@ -24,7 +24,7 @@ reset="$(tput sgr0)"
 cd /tmp
 git clone https://github.com/wuX4an/Alitle
 sleep 0.25
-cd Alitle
+cd ..
 
 # =============================================
 #   ON ALITLE
@@ -33,16 +33,16 @@ cd Alitle
 sleep 0.25
 
 # Create .ali dir
-mkdir /home/$user/.ali
-mkdir /home/$user/.ali/bin/
-mkdir /home/$user/.ali/conf/
-mkdir /home/$user/.ali/tools/
+mkdir -p /home/$user/.ali
+mkdir -p /home/$user/.ali/bin/
+mkdir -p /home/$user/.ali/conf/
+mkdir -p /home/$user/.ali/tools/
 
 sleep 0.25
 # Copy to .ali dir
-cp ./setups/bin/* /home/$user/.ali/bin/
-cp ./setups/conf/* /home/$user/.ali/conf/
-cp ./setups/tools/* /home/$user/.ali/tools/
+cp -r /tmp/Alitle/setups/bin/* /home/$user/.ali/bin/
+cp -r /tmp/Alitle/setups/conf/* /home/$user/.ali/conf/
+cp -r /tmp/Alitle/setups/tools/* /home/$user/.ali/tools/
 
 # =============================================
 #   ON PYTHON ENVIROMENT
@@ -91,7 +91,7 @@ question
 if [ $? -eq 0 ]; then
     #Edit
     sleep 0.5
-    nano /tmp/base/ali/conf.py
+    nano /tmp/Alitle/setups/base/ali/conf.py
     python
 else
     #Continue
