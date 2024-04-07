@@ -5,7 +5,7 @@ import os
 # =============================================
 
 settings = {
-  "username": os.environ["USER"],
+  "username": os.system["echo $USER"],
   "password": "alabama",
   "alpine_version": "3.19"
 }
