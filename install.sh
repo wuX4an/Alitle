@@ -78,6 +78,7 @@ function python() {
         pip install -r requirements.txt
         pyinstaller -F ali_utils.py ali.py conf.py
         mv dist/main ali
+        sudo mv ali /bin
     else
         echo -e "${reset}${red}${bold}Not in a virtual environment. Try to do it manually."
         exit
