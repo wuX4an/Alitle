@@ -76,10 +76,10 @@ function python() {
     if [[ "$PS1" == *"(env)"* ]]; then
         echo -e "${reset}${green}${bold}In the virtual environment."
         sleep 1
+        cd /tmp/Alitle
         pip install -r requirements.txt
-        pyinstaller -F /tmp/Alitle/setups/base/ali/ali_utils.py  /tmp/Alitle/setups/base/ali/ali.py  /tmp/Alitle/setups/base/ali/conf.py
-        mv dist/main ali
-        sudo mv ali /bin
+        pyinstaller -F /tmp/Alitle/setups/base/ali/ali.py /tmp/Alitle/setups/base/ali/ali_utils.py /tmp/Alitle/setups/base/ali/conf.py
+        sudo mv /tmp/Alitle/dist/main/ali /bin
     else
         echo -e "${reset}${red}${bold}Not in a virtual environment. Try to do it manually."
         exit
