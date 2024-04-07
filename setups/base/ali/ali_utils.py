@@ -1,5 +1,5 @@
 import os
-from . import conf
+import conf
 from time import sleep
 
 # =============================================
