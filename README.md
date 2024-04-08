@@ -49,7 +49,7 @@ Alitle is Alpine Linux on Docker. It is intended for those who want to use Docke
 <h3><details>
     <summary><b>Prerequisites</b></summary>
 
-<h6>1. Add your user to docker group</h6>
+<h6><b>1. Add your user to docker group</b></h6>
 <h6><pre><code>sudo usermod -aG docker $USER</code></pre></h6>
 
 </details></h3>
