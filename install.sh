@@ -78,7 +78,7 @@ function python() {
         sleep 1
         cd /tmp/Alitle
         pip install -r requirements.txt
-        pyinstaller -F /tmp/Alitle/setups/base/ali/ali.py /tmp/Alitle/setups/base/ali/ali_utils.py /tmp/Alitle/setups/base/ali/conf.py
+        pyinstaller -F /tmp/Alitle/setups/base/ali/ali.py
         sudo mv /tmp/Alitle/dist/main/ali /bin
     else
         echo -e "${reset}${red}${bold}Not in a virtual environment. Try to do it manually."
