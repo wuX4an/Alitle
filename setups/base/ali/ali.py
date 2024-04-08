@@ -48,5 +48,9 @@ def delete():
     ali_utils.delete()
 
 
-if __name__ == "__main__":
+user = os.environ.get('USER')
+
+if __name__ == "__main__" and user != "root":
     main()
+else:
+    print("Don't use it as the root user")
