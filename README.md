@@ -39,13 +39,25 @@ Alitle is Alpine Linux on Docker. It is intended for those who want to use Docke
 - Docker 🐳
 - Git 🌿
 - Python 🐍
-- binutils 🛠️
+- Binutils 🛠️
 
 </h6>
 
 </details></h3>
 
-#### NOTE: you must have port 2022 unoccupied, if not you must change it in ali(bin) and sshd_conf (ssh in beta)
+
+<h3><details>
+    <summary><b>Prerequisites</b></summary>
+<h6> 
+
+1. Add your user to docker group  
+``` sudo usermod -aG docker $USER ```
+
+</h6>
+
+</details></h3>
+
+####
 ```console
 curl https://raw.githubusercontent.com/wuX4an/Alitle/main/install.sh | sh
 ```
