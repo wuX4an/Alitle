@@ -53,7 +53,6 @@ docker_cmd=[
   "docker start alitle",
   "#Share",
   "docker cp /tmp/install.sh alitle:/",
-  f"docker cp /tmp/fish_theme.sh alitle:/",
   f"docker cp /home/{username}/.ali/conf/sshd_config alitle:/",
   f"docker cp /home/{username}/.ali/bin/ufetch alitle:/bin",
   "docker exec alitle chmod +x install.sh",
