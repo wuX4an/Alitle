@@ -93,7 +93,7 @@ def restart():
 # =============================================
 
 def delete():
-    os.system("nohup sh -c 'docker stop alitle && docker rm alitle' > log 2>&1&")
+    os.system("nohup sh -c 'docker kill alitle && docker rm alitle' > log 2>&1&")
     find_chain("log", "alitle","No such container", "Removing", "The container as been removed", "The Container no Exist", True)
 
 # =============================================
