@@ -44,6 +44,16 @@ def create(username, password, alpine_version):
     conf.install_scr = "\n".join(conf.install_scr)
     with open("/tmp/install.sh", "w") as install:
         install.write(conf.install_scr)
+    #setup_user src
+    os.system('touch /tmp/setup_user.sh')
+    conf.setup_user = "\n".join(conf.setup_user)
+    with open("/tmp/setup_user.sh", "w") as docker:
+        docker.write(conf.setup_user)
+    #setup_shell src
+    os.system('touch /tmp/setup_shell.sh')
+    conf.setup_shell = "\n".join(conf.setup_shell)
+    with open("/tmp/setup_shell.sh", "w") as docker:
+        docker.write(conf.setup_shell)
     #Docker src
     os.system('touch /tmp/docker_cmd.sh')
     conf.docker_cmd = "\n".join(conf.docker_cmd)
@@ -52,7 +62,7 @@ def create(username, password, alpine_version):
     
     ## RUN ##
     os.system("nohup sh -c 'chmod +x /tmp/docker_cmd.sh && . /tmp/docker_cmd.sh' > log 2>&1&")
-    find_chain("log", "***","permission denied", "Creating", "Creation Complete", "Something Went Wrong", True)
+    find_chain("log", "alitle","permission denied", "Creating", "Creation Complete", "Something Went Wrong", True)
     
 
 # =============================================
