@@ -24,7 +24,6 @@ install_scr=[
   "#Install base",
   "apk add curl wget git nano fish shadow sudo openssh-server openrc",
   "chsh root -s /usr/bin/fish",
-  "mkdir /set",
   "./set/setup_user.sh"
   "#Setup ssh",
   "mv sshd_config /etc/ssh",
@@ -63,6 +62,7 @@ docker_cmd=[
   f"docker cp /home/{username}/.ali/conf/sshd_config alitle:/",
   f"docker cp /home/{username}/.ali/bin/ufetch alitle:/bin",
   "docker cp /tmp/install.sh alitle:/",
+  "docker exec alitle mkdir /set"
   "docker cp /tmp/setup_user.sh alitle:/set/",
   "docker cp /tmp/setup_shell.sh alitle:/set/setup_shell",
   "docker exec alitle chmod +x install.sh",
