@@ -40,16 +40,12 @@ install_scr=[
   "chsh root -s /usr/bin/fish",
   f"chsh {username} -s /usr/bin/fish",
   f"mkdir /home/{username}/.config/fish/",
-  #"cp -r /sali/conf/fish/* /home/$USER/.config/fish/ && chown /home/$USER/.config/fish", For the future in sali
+  "cp /sali/conf/fish/* /home/$USER/.config/fish/ && chown /home/$USER/.config/fish"
   "sleep 0.25",
   "#Remove shits",
   "rm install.sh",
   "#Finishing",
   "echo -e 'Instalation Complete ***' "]
-
-fish_theme=[
-  "#!/bin/sh",
-  "cp /sali/conf/fish/* /home/$USER/.config/fish/ && chown /home/$USER/.config/fish"]
 
 docker_cmd=[
   f"docker pull alpine:{alpine_version}",
@@ -61,8 +57,5 @@ docker_cmd=[
   f"docker cp /home/{username}/.ali/conf/sshd_config alitle:/",
   f"docker cp /home/{username}/.ali/bin/ufetch alitle:/bin",
   "docker exec alitle chmod +x install.sh",
-  "docker exec alitle chmod +x fish_theme.sh",
-  "docker exec alitle ./install.sh",
-  "docker exec alitle ./fish_theme.sh",
   "rm /tmp/install.sh",
   "rm /tmp/docker_cmd.sh"]

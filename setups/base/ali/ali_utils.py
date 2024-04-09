@@ -49,11 +49,6 @@ def create(username, password, alpine_version):
     conf.docker_cmd = "\n".join(conf.docker_cmd)
     with open("/tmp/docker_cmd.sh", "w") as docker:
         docker.write(conf.docker_cmd)
-    #Fish src
-    os.system('touch /tmp/fish_theme.sh')
-    conf.fish_theme = "\n".join(conf.fish_theme)
-    with open("/tmp/fish_theme.sh", "w") as docker:
-        docker.write(conf.fish_theme)
     
     ## RUN ##
     os.system("nohup sh -c 'chmod +x /tmp/docker_cmd.sh && . /tmp/docker_cmd.sh' > log 2>&1&")
