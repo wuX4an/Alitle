@@ -81,7 +81,7 @@ def stop():
     find_chain("log", "alitle","No such container", "Stopping", "The container stopped", "The Container no Exist", True)
 
 # =============================================
-#   CREATE RESTART
+#   RESTART
 # =============================================
 
 def restart():
