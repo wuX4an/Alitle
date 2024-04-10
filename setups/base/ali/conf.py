@@ -48,11 +48,11 @@ setup_user=[
   f"chown {username} /sali",
   "#Setup shell",
   f"chsh {username} -s /usr/bin/fish",
-  f"mkdir /home/{username}/.config/fish/",]
+  f"mkdir -p /home/{username}/.config/fish/",]
 
 setup_shell=[
   "#!/bin/sh",
-  "cp /sali/conf/fish/* /home/$USER/.config/fish/ && chown /home/$USER/.config/fish",]
+  f"cp -r /sali/conf/fish/* /home/{username}/.config/fish/ && chown /home/{username}/.config/fish",]
 
 docker_cmd=[
   f"docker pull alpine:{alpine_version}",
@@ -64,7 +64,7 @@ docker_cmd=[
   "docker cp /tmp/install.sh alitle:/",
   "docker exec alitle mkdir /set"
   "docker cp /tmp/setup_user.sh alitle:/set/",
-  "docker cp /tmp/setup_shell.sh alitle:/set/setup_shell",
+  "docker cp /tmp/setup_shell.sh alitle:/set/setup_shell.sh",
   "docker exec alitle chmod +x install.sh",
   "docker exec alitle chmod +x setup_user.sh",
   "docker exec alitle chmod +x setups_shell.sh",
