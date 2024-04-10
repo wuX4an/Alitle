@@ -13,6 +13,6 @@ sleep 0.25
 # =============================================
 #   COPY THE DEPENDENCIES 
 # =============================================
-cp -r /tmp/Alitle/setups/bin/* /home/$USER/.ali/bin/
-cp -r /tmp/Alitle/setups/conf/* /home/$USER/.ali/conf/
-cp -r /tmp/Alitle/setups/tools/* /home/$USER/.ali/tools/
+cp -r ./setups/bin/* /home/$USER/.ali/bin/
+cp -r ./setups/conf/* /home/$USER/.ali/conf/
+cp -r ./setups/tools/* /home/$USER/.ali/tools/
