@@ -62,7 +62,7 @@ def create(username, password, alpine_version):
     
     ## RUN ##
     os.system("nohup sh -c 'chmod +x /tmp/docker_cmd.sh && . /tmp/docker_cmd.sh' > log 2>&1&")
-    find_chain("log", "alitle","permission denied", "Creating", "Creation Complete", "Something Went Wrong", True)
+    find_chain("log", "***","permission denied", "Creating", "Creation Complete", "Something Went Wrong", True)
     
 
 # =============================================
