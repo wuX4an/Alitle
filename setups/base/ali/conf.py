@@ -51,8 +51,8 @@ setup_user=[
   f"mkdir -p /home/{username}/.config/fish/",]
 
 setup_shell=[
-  "#!/bin/sh",
-  f"cp -r /sali/conf/fish/* /home/{username}/.config/fish/ && chown /home/{username}/.config/fish",]
+  "#!/usr/bin/fish",
+  "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install IlanCosman/tide@v6",]
 
 docker_cmd=[
   f"docker pull alpine:{alpine_version}",
@@ -62,11 +62,12 @@ docker_cmd=[
   f"docker cp /home/{username}/.ali/conf/sshd_config alitle:/",
   f"docker cp /home/{username}/.ali/bin/ufetch alitle:/bin",
   "docker cp /tmp/install.sh alitle:/",
-  "docker exec alitle mkdir /set"
+  "docker exec alitle mkdir /set",
   "docker cp /tmp/setup_user.sh alitle:/set/",
   "docker cp /tmp/setup_shell.sh alitle:/set/setup_shell.sh",
   "docker exec alitle chmod +x install.sh",
-  "docker exec alitle chmod +x setup_user.sh",
-  "docker exec alitle chmod +x setups_shell.sh",
+  "docker exec alitle ./install.sh",
+  "docker exec alitle chmod +x /set/setup_user.sh",
+  "docker exec alitle chmod +x /set/setups_shell.sh",
   "rm /tmp/install.sh",
   "rm /tmp/docker_cmd.sh"]
