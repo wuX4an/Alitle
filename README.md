@@ -110,3 +110,5 @@ chmod +x install.sh
 ## Credit
 
 - [jschx (ufetch) ](https://gitlab.com/jschx/ufetch)
+- [jorgebucaran (fisher) ](https://github.com/jorgebucaran/fisher)
+- [IlanCosman (tide) ](https://github.com/IlanCosman/tide)
