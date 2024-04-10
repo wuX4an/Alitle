@@ -50,7 +50,7 @@ setup_user=[
 
 setup_shell=[
   "#!/usr/bin/fish",
-  "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install IlanCosman/tide@v6",
+  "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install IlanCosman/tide@v6 > log",
   "clear",
   "tide configure"]
 
