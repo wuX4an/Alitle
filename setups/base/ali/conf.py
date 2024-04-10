@@ -47,8 +47,7 @@ setup_user=[
   f"usermod -aG wheel {username}",
   f"chown {username} /sali",
   "#Setup shell",
-  f"chsh {username} -s /usr/bin/fish",
-  f"mkdir -p /home/{username}/.config/fish/",]
+  f"chsh {username} -s /usr/bin/fish",]
 
 setup_shell=[
   "#!/usr/bin/fish",
@@ -63,11 +62,11 @@ docker_cmd=[
   f"docker cp /home/{username}/.ali/bin/ufetch alitle:/bin",
   "docker cp /tmp/install.sh alitle:/",
   "docker exec alitle mkdir /set",
-  "docker cp /tmp/setup_user.sh alitle:/set/",
-  "docker cp /tmp/setup_shell.sh alitle:/set/setup_shell.sh",
   "docker exec alitle chmod +x install.sh",
   "docker exec alitle ./install.sh",
+  "docker cp /tmp/setup_user.sh alitle:/set/setup_user.sh",
+  "docker cp /tmp/setup_shell.sh alitle:/set/setup_shell.sh",
   "docker exec alitle chmod +x /set/setup_user.sh",
-  "docker exec alitle chmod +x /set/setups_shell.sh",
+  "docker exec alitle chmod +x /set/setup_shell.sh",
   "rm /tmp/install.sh",
   "rm /tmp/docker_cmd.sh"]
