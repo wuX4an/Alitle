@@ -68,14 +68,14 @@ chmod +x install.sh
 <h3><details>
     <summary><b>How to use</b></summary>
 
-### Setup
+#### Setup
 <h6>1. Create a virtual environment with python:</h6>
 <h6><pre><code>python3 -m venv env</code></pre></h6>
 
 <h6>2. Install dependencies:</h6>
 <h6><pre><code>pip install -r requirements.txt</code></pre></h6>
 
-### Usage
+#### Usage
 <h6>1. For help type:</h6>
 <h6><pre><code>python3 setups/base/ali/ali.py --help</code></pre></h6>
 
