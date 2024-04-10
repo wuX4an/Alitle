@@ -73,7 +73,6 @@ chmod +x install.sh
 <h6><pre><code>python3 -m venv env</code></pre></h6>
 
 <h6>2. Install dependencies:</h6>
-<h6><pre><code>pip install -r requirements.txt</code></pre></h6>
 
 #### Usage:
 <h6>1. For help type:</h6>
