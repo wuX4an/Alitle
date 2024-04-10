@@ -69,17 +69,16 @@ chmod +x install.sh
     <summary><b>How to use</b></summary>
 
 #### Setup:
-<h6>1. Create a virtual environment with python:</h6>
+###### 1. Create a virtual environment with python:
 <h6><pre><code>python3 -m venv env</code></pre></h6>
 
 <h6>2. Install dependencies:</h6>
 
 #### Usage:
-<h6>1. For help type:</h6>
+###### 1. For help type:
 <h6><pre><code>python3 setups/base/ali/ali.py --help</code></pre></h6>
 
-<h6>2. You can modify to your taste setups/base/ali/conf.py</h6>
-<h6><pre><code>python3 -m venv env</code></pre></h6>
+###### 2. You can modify to your taste setups/base/ali/conf.py
 
 </details></h3>
 
