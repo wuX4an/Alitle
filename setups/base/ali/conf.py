@@ -51,7 +51,9 @@ setup_user=[
 
 setup_shell=[
   "#!/usr/bin/fish",
-  "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install IlanCosman/tide@v6",]
+  "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install IlanCosman/tide@v6",
+  "clear",
+  "tide configure"]
 
 docker_cmd=[
   f"docker pull alpine:{alpine_version}",
