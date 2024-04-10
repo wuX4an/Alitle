@@ -79,7 +79,8 @@ chmod +x install.sh
 ###### 1. For help type:
 <h6><pre><code>python3 setups/base/ali/ali.py --help</code></pre></h6>
 
-###### 2. You can modify to your taste setups/base/ali/conf.py
+###### 2. You can modify to your taste the process of creation
+<h6><pre><code>nano setups/base/ali/conf.py</code></pre></h6>
 
 </details></h3>
 
