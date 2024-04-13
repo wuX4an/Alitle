@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import os
 
 username = os.environ.get("USER")
