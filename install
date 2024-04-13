@@ -18,3 +18,9 @@ os.system(f'mkdir -p /home/{username}/.ali/tools/')
 os.system(f'cp -r ./setups/bin/* /home/{username}/.ali/bin/')
 os.system(f'cp -r ./setups/conf/* /home/{username}/.ali/conf/')
 os.system(f'cp -r ./setups/tools/* /home/{username}/.ali/tools/')
+
+# =============================================
+#   MOVE TO /opt
+# =============================================
+os.system('sudo mkdir -p /opt/alitle')
+os.system('sudo cp -r setups /opt/alitle/')

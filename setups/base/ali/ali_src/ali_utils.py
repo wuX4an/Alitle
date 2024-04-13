@@ -1,5 +1,5 @@
 import os
-import conf
+from ali_src import conf
 from time import sleep
 
 # =============================================

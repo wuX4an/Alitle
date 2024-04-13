@@ -1,6 +1,6 @@
 import click
-import ali_utils
-import conf
+from ali_src import ali_utils
+from ali_src import conf
 import os
 
 @click.group()
