@@ -1,6 +1,6 @@
 import os
 
-username = os.environ("USER")
+username = os.environ.get("USER")
 
 # =============================================
 #   CREATE .ali DIR
