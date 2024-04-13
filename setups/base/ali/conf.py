@@ -22,7 +22,7 @@ alpine_version = settings.get("alpine_version")
 install_scr=[
   "#!/bin/sh",
   "#Install base",
-  "apk add curl wget git nano fish shadow sudo openssh-server openrc",
+  "apk add curl wget git nano fish shadow sudo openssh-server openrc ncurses",
   "chsh root -s /usr/bin/fish",
   "#Setup ssh",
   "mv sshd_config /etc/ssh",
