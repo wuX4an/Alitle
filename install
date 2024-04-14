@@ -24,3 +24,4 @@ os.system(f'cp -r ./setups/tools/* /home/{username}/.ali/tools/')
 # =============================================
 os.system('sudo mkdir -p /opt/alitle')
 os.system('sudo cp -r setups /opt/alitle/')
+os.system('sudo cp -r env /opt/alitle/')
