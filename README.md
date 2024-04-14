@@ -60,7 +60,6 @@ Alitle is Alpine Linux on Docker. It is intended for those who want to use Docke
 ```console
 git clone https://github.com/wuX4an/alitle
 cd alitle
-chmod +x install
 ./install
 ```
 ---
